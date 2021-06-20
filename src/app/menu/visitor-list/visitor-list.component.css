@@ -1,0 +1,45 @@
+#visitor-container {
+}
+
+#visitor-page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+#visitor-table {
+  margin-top: 20px;
+  width: 1200px;
+}
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+#table-header {
+  display: flex;
+  justify-content: flex-end;
+}
+#table-pagignation{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+#visitor-sidemenu {
+  width: 300px;
+  margin-top: 65px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.search-field {
+  margin-bottom: 15px;
+}

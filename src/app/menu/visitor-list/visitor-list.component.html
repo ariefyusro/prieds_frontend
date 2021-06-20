@@ -1,0 +1,93 @@
+
+<div id="visitor-container">
+  <div id="visitor-header">
+    <mat-toolbar color="primary">
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Visitor App</span>
+      <span class="spacer"></span>
+      <span>Mock Admin</span>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <div id="visitor-page">
+    <div id="visitor-table">
+      <div id="table-header">
+        <button mat-raised-button color="primary" (click)="onCreate()">Create Visitor 
+          <span class="material-icons">
+          add
+          </span>
+        </button>
+      </div>
+      <table mat-table [dataSource]="visitors" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="NIK">
+          <th mat-header-cell *matHeaderCellDef> NIK </th>
+          <td mat-cell *matCellDef="let element"> {{element.NIK}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="time_arrival">
+          <th mat-header-cell *matHeaderCellDef> Time Arrival </th>
+          <td mat-cell *matCellDef="let element"> {{element.time_arrival}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="patient_visited">
+          <th mat-header-cell *matHeaderCellDef> Patient Visited </th>
+          <td mat-cell *matCellDef="let element"> {{element.patient_visited}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="patient_room">
+          <th mat-header-cell *matHeaderCellDef> Patient Room </th>
+          <td mat-cell *matCellDef="let element"> {{element.patient_room}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="expected_duration">
+          <th mat-header-cell *matHeaderCellDef> Expected Duration </th>
+          <td mat-cell *matCellDef="let element"> {{element.expected_duration}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div id="table-pagignation">
+        <div *ngIf="page <= 1">
+          <button mat-button (click)="previous()" disabled>
+            << Previous</button> 
+        </div> 
+        <div *ngIf="page > 1">
+          <button mat-button (click)="previous()">
+            << Previous</button> 
+        </div>
+        <div *ngIf="pagesAmount > page">
+          <button mat-button (click)="next()">Next >></button>
+        </div>
+        <div *ngIf="pagesAmount == page">
+          <button mat-button (click)="next()" disabled>Next >></button>
+        </div>
+      </div>
+    </div>
+    <div id="visitor-sidemenu">
+      <form action="searchVisitor()" class="mat-elevation-z5">
+        <mat-form-field appearance="standard" class="search-field">
+          <mat-label>Search Name</mat-label>
+          <input matInput placeholder="Name">
+          <mat-hint>Input Name</mat-hint>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>

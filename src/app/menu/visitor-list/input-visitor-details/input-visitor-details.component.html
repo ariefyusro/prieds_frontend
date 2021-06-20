@@ -1,0 +1,57 @@
+
+<form [formGroup]="visitorForm" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="340px">
+        <mat-grid-tile>
+            <div id="input-grid-left">
+                <mat-form-field>
+                    <input formControlName="id" matInput placeholder="ID*">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="NIK" matInput placeholder="NIK">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="name" matInput placeholder="Name">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <div id="radio-btn-input">
+                    <mat-radio-group formControlName="gender">
+                        <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button>
+                        <mat-radio-button value="Other">Other</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <mat-form-field>
+                    <input type="datetime-local" formControlName="time_arrival" matInput placeholder="Time Arival">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div id="input-grid-right">
+                
+                <mat-form-field>
+                    <input formControlName="patient_visited" matInput placeholder="Patient Visited">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="patient_room" matInput placeholder="Patient Room">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="datetime-local" formControlName="expected_duration" matInput placeholder="Expected Duration">
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <textarea formControlName="note" matInput placeholder="Note"></textarea>
+                    <mat-error>This field is mandatory.</mat-error>
+                </mat-form-field>
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                    <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

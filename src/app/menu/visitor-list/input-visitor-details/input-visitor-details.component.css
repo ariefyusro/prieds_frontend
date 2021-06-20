@@ -1,0 +1,18 @@
+#input-grid-left {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+#input-grid-right {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+#radio-btn-input {
+    margin-bottom: 35px;
+}
+
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
